@@ -1,0 +1,420 @@
+<html xmlns="http://www.w3.org/1999/xhtml" version="XHTML+RDFa 1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.w3.org/1999/xhtml http://www.w3.org/MarkUp/SCHEMA/xhtml-rdfa-2.xsd" xmlns:og="http://ogp.me/ns#"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=1024">
+
+  <meta name="description" content="Check out this GoDaddy hosted webpage! http://codefumonkey.com.">
+  <meta property="og:title" content="CodeFu Monkey">
+  <meta property="og:description" content="Check out this GoDaddy hosted webpage! http://codefumonkey.com.">
+
+    <meta property="og:image" content="http://nebula.wsimg.com/obj/RkM1QTE2MzRDRjY3QTMwREMyMjA6ZTVlM2VjYTU1YTc5Y2YzMjFiOGExODg1ODU2ZTg0NzY=">
+    <link rel="image_src" href="http://nebula.wsimg.com/obj/RkM1QTE2MzRDRjY3QTMwREMyMjA6ZTVlM2VjYTU1YTc5Y2YzMjFiOGExODg1ODU2ZTg0NzY=">
+
+    <meta property="og:image" content="http://imagesak.websitetonight.com/skins/pl.gd/images/logo1.gif">
+
+
+    <link rel="shortcut icon" type="image/ico" href="https://img1.wsimg.com/ip/v1.2.22/images/favicon.ico">
+    <link rel="icon" type="image/png" href="https://img1.wsimg.com/ip/v1.2.22/images/favicon.jpg">
+    <title>
+    CodeFu Monkey
+</title>
+
+  	<!--CSS_START_MERGE:ss.css-->
+    <link href="https://img1.wsimg.com/ip/v1.2.22/style/ux.css" rel="stylesheet" type="text/css">
+    <link href="https://img1.wsimg.com/ip/v1.2.22/style/Site.css" rel="stylesheet" type="text/css">
+    <link href="https://img1.wsimg.com/ip/v1.2.22/style/layout.css" rel="stylesheet" type="text/css">
+    <link href="https://img1.wsimg.com/ip/v1.2.22/style/jquery.gd.shareLinks.css" rel="stylesheet" type="text/css">
+  	<!--CSS_END_MERGE-->
+
+
+
+    <link href="https://img1.wsimg.com/ip/v1.2.22/style/font-junglefever.css" rel="Stylesheet" type="text/css">
+
+
+    <script type="text/javascript" src="https://widget.starfieldtech.com/API.svc/jquery.js"></script>
+    <script type="text/javascript" src="https://widget.starfieldtech.com/API.svc/jquery-ui.js"></script>
+
+    <!--JS_START_MERGE:ss-merged.js-->
+    <script type="text/javascript" src="https://img1.wsimg.com/ip/v1.2.22/scripts/ss.js"></script>
+    <script type="text/javascript" src="https://img1.wsimg.com/ip/v1.2.22/scripts/jquery.gd/jquery.gd.core.js"></script>
+    <script type="text/javascript" src="https://img1.wsimg.com/ip/v1.2.22/scripts/jquery.gd/jquery.gd.baseWidget.js"></script>
+    <script type="text/javascript" src="https://img1.wsimg.com/ip/v1.2.22/scripts/jquery.gd/jquery.gd.scaleBackground.js"></script>
+    <script type="text/javascript" src="https://img1.wsimg.com/ip/v1.2.22/scripts/jquery.gd-ss/jquery.gd-ss.switcher.js"></script>
+    <script type="text/javascript" src="https://img1.wsimg.com/ip/v1.2.22/scripts/jquery.gd/jquery.gd.textShadow.js"></script>
+    <script type="text/javascript" src="https://img1.wsimg.com/ip/v1.2.22/scripts/jquery.gd/jquery.gd.shareLinks.js"></script>
+    <!--JS_END_MERGE-->
+
+    <script type="text/javascript" src="https://widget.starfieldtech.com/API.svc/cygnus-duel.js?app=SS&amp;user=1630388&amp;proxy=%2fCygnus%2fProxy&amp;action=%2fCygnus%2fAction"></script>
+
+
+
+<script type="text/javascript">// <![CDATA[
+    $j(document).ready( function() {
+        // ---- Configure the application settings for communicating with Cygnus.
+        $c.Stage.applicationEventHandlerElement = $j("#page");
+
+        var appSettings = $c.Stage.applicationSettings;
+        appSettings.showConfigControl = false;
+        appSettings.showToggleControl = false;
+        appSettings.showCloseControl = true;
+        appSettings.hideCloseControlOnEdit = true;
+        appSettings.widgetActions.closeControlClick = function (widgetId, widgetType) {
+            // this will hide the widget since it's already open
+            $ss.showWidget(widgetId, $j(".ss-service[wid='" + widgetId + "']"));
+        };
+        appSettings.widgetEvents.saveConfigSuccess =
+        function(widgetId, widgetType) {
+            var li = $j("li:has(a[wid='" + widgetId + "'])");
+            if (li.length > 0)
+            {
+                li.show();
+                li.find("a").removeClass("uninitialized");
+                $ss.showLauncher();
+                $ss.showSavedConfirmation('App saved successfully.');
+            }
+            else
+            {
+                if (widgetType == "fbpage")
+                {
+                    $ss.showSavedConfirmation('Facebook Page saved successfully.');
+                }
+            }
+        };
+        appSettings.widgetEvents.saveConfigFailure =
+            function(widgetId, widgetType) {
+                //alert("failed!");
+            };
+        appSettings.widgetEvents.cancelledConfig =
+            function(widgetId, widgetType) {
+                var a = $j("a[wid='" + widgetId + "']");
+                if (a.hasClass("uninitialized"))
+                {
+                    //close the widget since it's already open if it's not be initialized.
+                    $ss.showWidget(widgetId, $j(".ss-service[wid='" + widgetId + "']"));
+                    $ss.openAdminPanel('widgets');
+                }
+            };
+        appSettings.widgetEvents.openedConfig =
+            function(widgetId, widgetType)
+            {
+                if (widgetType != "fbpage")
+                {
+                    // close tabs
+                    $ss.hideAdminPanel();
+                }
+            };
+        appSettings.widgetEvents.closedConfig =
+            function(widgetId, widgetType)
+            {
+                if (widgetType == "fbpage")
+                {
+                    $ss.facebookPage.close(widgetId);
+                }
+            };
+        appSettings.widgetEvents.dataModified =
+            function(widgetId, widgetType, data) {
+                if ($j.isPopulated(data))
+                {
+                    if (widgetType == "fbpage")
+                    {
+                        $j('.widget-fbpage-title').text(data.Title.value);
+                    }
+                    else
+                    {
+                        var a = $j("#ss-launcher").find("a[wid=" + widgetId + "]");
+                        var children = a.children();
+                        a
+                            .text(data.LinkTitle.value)
+                            .append(children);
+                        $j("#widgets-added-list").find("li[wid=" + widgetId + "] .widget-added-label-title").text(data.LinkTitle.value);
+                    }
+                }
+            };
+        appSettings.widgetEvents.revealed =
+            function(widgetId, widgetType) {
+                if ($j.isFunction($ss.stage.layout.revealed)) $ss.stage.layout.revealed();
+            };
+        appSettings.widgetEvents.obscured =
+            function(widgetId, widgetType) {
+                if ($j.isFunction($ss.stage.layout.obscured)) $ss.stage.layout.obscured();
+            };
+
+        appSettings.widgetEvents.widgetModalDisplayed =
+        appSettings.widgetEvents.contentUpdated =
+          function(wigetId, widgetType) { $ss.fixPalette(); };
+
+        appSettings.applicationUtilityProviders.getImages = function(widgetId, success, failure)
+        {
+            // show a dialog for the user to select images that were uploaded as backgrounds
+            // one day maybe we can change this to be a uploader instead.
+            $ss.facebookPage.gatherImages(null, function(result) {
+                // if the user closed the dialog
+                if (result)
+                {
+                    success(result.images);
+                }
+                else  // do the failure callback otherwise.
+                {
+                    failure({ error: 'Error', message: 'Unable to get images.' });
+                }
+            });
+        }
+
+        appSettings.baseWidgetColors = {
+            background: '#333333',
+            textTitle:  '#FFFFFF',
+            textContent: '#FFFFFF',
+            textLinks:  '#999999',
+            borderTitle:  '#999999'
+        };
+
+        appSettings.applicationEvents.colorsChanged = "widgets.colorsChanged";
+
+        appSettings.widgetInitializeOptions.fbpage = { hideFacebookConnectDisplay: true };
+
+        appSettings.modalContainerCssClass ="modal-container";
+
+        $c.CommManager.applicationData = { "domainName": "codefumonkey.com" };
+
+        // ---- DONE application setting configuration
+
+        // load/style the page and all it's components
+        $ss = SimpleSite({
+            basePath: "/",
+            cdnImagePath: "https://img1.wsimg.com/ip/v1.2.22/images/",
+            cdnCssPath: "https://img1.wsimg.com/ip/v1.2.22/style/",
+            eventReceiver: "#page",
+            background: {"id":10234370,"originalSrc":"https://nebula.wsimg.com/obj/RkM1QTE2MzRDRjY3QTMwREMyMjA6N2IwMTA4NWIxNGI0Y2QxMzQ0OWMwYzE4NThhN2ZhZTc=","src":"https://nebula.wsimg.com/obj/RkM1QTE2MzRDRjY3QTMwREMyMjA6N2IwMTA4NWIxNGI0Y2QxMzQ0OWMwYzE4NThhN2ZhZTc=","thumbnail":"https://nebula.wsimg.com/obj/RkM1QTE2MzRDRjY3QTMwREMyMjA6ZTVlM2VjYTU1YTc5Y2YzMjFiOGExODg1ODU2ZTg0NzY=","orientation":"1","variation":"mc","isUserOwner":true,"cropHistory":null,"stockBackgroundId":0,"isUncropped":true},
+            layout: {"id":1,"name":"Side Menu","type":"1","variation":"l","VariationName":"Left Side"},
+            layoutControls:
+            {
+                content: '#ss-main',
+                title: '#ss-name',
+                description: '#ss-description',
+                launcher: '#ss-launcher',
+                page: '#page',
+                widgetContainer: '#ss-widgetContainer',
+                about: '#ss-about',
+                background: '#ss-background'
+            },
+            palette: {
+  "id": 0,
+  "name": null,
+  "userCreated": false,
+  "isActive": true,
+  "backgrounds": {
+    "page": "#000000",
+    "main": "#999999",
+    "meta": "#000000",
+    "block": "#333333"
+  },
+  "fonts": {
+    "title": "#FFFFFF",
+    "description": "#FFFFFF",
+    "services": "#FFFFFF",
+    "primary": "#FFFFFF",
+    "secondary": "#FFFFFF",
+    "links": "#999999"
+  }
+},
+            fonts: {"titleFontId":23,"generalFontId":2,"titleSize":60,"descriptionSize":16,"servicesSize":16,"titleFontIsEmbed":true,"generalFontIsEmbed":false},
+            titleFont: {"id":23,"appliesTo":"title","faceName":"JungleFever","defaultSize":50,"isEmbed":true},
+            generalFont: {"id":2,"appliesTo":"title","faceName":"Tahoma","defaultSize":60,"isEmbed":false},
+            fontControls:
+            {
+                title: {reset: '.ss-title', apply: '.ss-title' },
+                description: {reset: '.ss-description', apply: '.ss-description' },
+                services: {reset: '.ss-service', apply: '.ss-service'},
+                block: {reset: '.ss-block, #ss-widgetContainer', apply: '.ss-block, #ss-widgetContainer' }
+            },
+            styleControls:
+            {
+                // Page background
+                background: {reset: '#ss-background', apply: '#ss-background' },
+                title: {reset: '.ss-title', apply: '.ss-title', borders: {reset: '#ss-launcher li', apply: '#ss-launcher li'} },
+                description: {reset: '.ss-description', apply: '.ss-description' },
+                services: {reset: '.ss-service', apply: '.ss-service', borders: {reset: '.accordion-arrow-inheritor, .accordion-button', apply: '.accordion-arrow-inheritor, .accordion-button'}},
+                block: {
+                  reset: '.ss-block, #ss-widgetContainer',
+                  apply: '.ss-block, #ss-widgetContainer, .modal-widget',
+                  foreground: { apply: '.contrast' }
+                },
+                // Widget text
+                primary: {
+                  reset: '.widget-container .title-bar, .widget-container .text-highlight, .widget-instance h1, .widget-instance h2, .widget-instance h3, .widget-instance h4, .widget-instance h5, .widget-instance h6, .modal-widget .title-bar, .modal-widget .text-highlight, .modal-widget h1, .modal-widget h2, .modal-widget h3, .modal-widget h4, .modal-widget h5, .modal-widget h6',
+                  apply: '.widget-container .title-bar, .widget-container .text-highlight, .widget-instance h1, .widget-instance h2, .widget-instance h3, .widget-instance h4, .widget-instance h5, .widget-instance h6, .modal-widget .title-bar, .modal-widget .text-highlight, .modal-widget h1, .modal-widget h2, .modal-widget h3, .modal-widget h4, .modal-widget h5, .modal-widget h6'
+                },
+                secondary: {
+                  reset: '.widget-instance, .widget-instance div:not(.watermark, .charCounter, .text-highlight, .contrast, .error, .form-errors, .required, :isThirdPartyInclude), .widget-instance span:not(.watermark, .charCounter, .text-highlight, .contrast, .error, .form-errors, .required, :isThirdPartyInclude), .widget-instance li, .widget-instance p, .modal-widget, .modal-widget div:not(.watermark, .charCounter), .modal-widget li, .modal-widget span:not(.text-highlight,.contrast), .modal-widget p',
+                  apply: '.widget-instance, .widget-instance div:not(.watermark, .charCounter, .text-highlight, .contrast, .error, .form-errors, .required, :isThirdPartyInclude), .widget-instance span:not(.watermark, .charCounter, .text-highlight, .contrast, .error, .form-errors, .required, :isThirdPartyInclude), .widget-instance li, .widget-instance p, .modal-widget, .modal-widget div:not(.watermark, .charCounter), .modal-widget li, .modal-widget span:not(.text-highlight,.welcome-subtitle,.contrast), .modal-widget p',
+                  background: { apply: '.contrast, .speech-balloon-tail' },
+                  borders: { apply: '.speech-balloon-tail' }
+                },
+                //main: { reset: '#ss-launcher, .modal-widget', apply: '.modal-widget, .layout3-c #ss-launcher, .layout2-c #ss-launcher, .layout2-l #ss-launcher, .layout2-r #ss-launcher' }, //'.ss-main, .layout3-c #ss-launcher',
+                //meta: { reset: '#ss-main', apply: '.layout1-c #ss-main, .layout1-l #ss-main, .layout1-r #ss-main, .layout4-c #ss-main, .layout4-l #ss-main, .layout4-r #ss-main' }, //'.ss-main, .layout3-c #ss-launcher',
+                main: { reset: '#ss-launcher', apply: '#ss-launcher' },
+                meta: { reset: '#ss-about', apply: '#ss-about' }, //'.ss-main, .layout3-c #ss-launcher',
+                links: { reset: '.modal-widget a', apply: '.widget-instance a:not(.contrast, :isInWidgetConfigPanel, :isThirdPartyInclude), .modal-widget a:not(.welcome-link), a.widget-link', borders: {reset: '.widget-container .title-bar, .widget-container .contrast-border, hr', apply: '.widget-container .title-bar, .widget-container .contrast-border, hr' }},
+                page: { reset: '.ss-background, body', apply: '.ss-background, body' },
+                launcher: { reset: '#ss-launcher', apply: '#ss-launcher' },
+                widgetContainer: { reset: '#ss-widgetContainer', apply: '#ss-widgetContainer' }
+            },
+            siteInfo: {
+                title: "CodeFu Monkey",
+                description: "The CodeFu Is Strong With This Monkey.",
+                domain: "codefumonkey.com",
+                showShareLinks: false
+            },
+            shareLinksData: {
+
+                facebook: { ciCode: '44670', value:0 },
+                myspace: { ciCode: '44666', message: "CodeFu Monkey", value:2 },
+                delicious: { ciCode: '44668', message: "Check out this GoDaddy hosted webpage! http://codefumonkey.com.", value:3 },
+                stumbleupon: { ciCode: '44669', value:4 }
+            },
+            previewMessageData: [{"appId":"1", message:"<div class=\"preview-warning-info\">This is only a preview. We may still be setting up your domain.</div><div>To get started customizing your site, click <b>Owner Login</b>. After domain setup is complete, view your live site at your domain address.</div><br/><div>Domain address:<br /><a href=\"http://[[domain]]\">[[domain]]</a></div>"}],
+            wstAppName : 'GoDaddy Website Builder',
+            gcWstAppName : 'Websites + Marketing',
+            gDCrossSellISC : 'https://www.godaddy.com/websites/website-builder'
+
+        });
+
+        $ss.showLauncher();
+
+        // display the main container (nav and about) which should be formatted by now
+        $j("#ss-mainContainer").css("visibility", "visible");
+
+
+
+        $j("#ss-description").linkify({fontColorParent: '#ss-description', initText: "The CodeFu Is Strong With This Monkey."});
+        $j("#ss-title").linkify({fontColorParent: '#ss-name', initText: "CodeFu Monkey"});
+
+        // show modal dialog if needed.
+        $ss.stage.showPreviewModal();
+    });
+// ]]></script>
+
+  <script type="text/javascript">// <![CDATA[
+
+    $j(document).ready(function () {
+
+
+
+      var loginHref = $j("#login-link").attrSafe("href").replace(/&lcid=.*?(&|$)/gi, '&lcid=' + (location.hostname.toLowerCase() == $ss.stage.siteInfo.domain.toLowerCase()));
+      $j("#login-link").attrSafe("href", loginHref);
+    });
+
+  // ]]></script>
+
+  <script type="text/javascript" src="https://img3.wsimg.com/starfield/curl/v1.5.2/curl.js"></script><link rel="stylesheet" type="text/css" _curl_movable="true" href="http://img2.wsimg-com.ide/starfield/sf.core/v1.5.2/sf.core.css"><style type="text/css">.ui-gdText{font-family:Verdana,helvetica,arial,sans-serif;word-wrap:break-word}.ui-gdText-container{padding:0}.ui-gdText .widget-edit-config-panel{padding:10px;position:relative}.ui-gdText-container-normal h1.title{font-size:14px;margin:0;font-weight:700;border-bottom:1px solid #888;color:#FFF}.ui-gdText-container ul,.ui-gdText-container ol{margin:15px 0 15px 20px}.ui-gdText-container li{list-style-position:inside}.ui-gdText .widget-edit-config-panel .check-box-label input{width:13px;height:13px;vertical-align:bottom;position:relative;top:0;margin-right:5px;overflow:hidden}.ui-gdText .widget-edit-config-panel .charCounter{color:#2e2e2e}.ui-gdText .widget-edit-config-panel .error{color:#D00000;margin-bottom:1em}.ui-gdText .widget-edit-config-panel .required{color:#D00000}.ui-gdText .widget-edit-config-panel .invalid{border-color:#CC000B}.ui-gdText .widget-edit-config-panel .buttons{text-align:center;margin-top:15px}.ui-gdText .widget-edit-config-panel .buttons *{margin:0 5px}.ui-gdText .widget-edit-config-panel .buttons .edit-config-cancel{display:inline-block;vertical-align:top;line-height:22px}.ui-gdText-container-normal .form-label{margin-bottom:4px}.ui-gdText-container-normal .form-input{margin-bottom:15px;margin-right:10px}.ui-gdText-container-normal .form-submit-container{margin-top:10px}.ui-gdText-container-normal input.name{width:290px}.ui-gdText-container-normal input.submit{cursor:pointer}.ui-gdText .text-content{word-wrap:break-word}.ui-gdText-dialog .groupcontainer{height:160px}.ui-gdText-dialog .inputs{padding:0 0 10px}.ui-gdText-dialog .inputs input{width:260px;border-color:#000;padding:2px}.ui-gdText-dialog .group label{display:block;margin:0 0 5px;padding:0}.ui-gdText-dialog .inputs label{display:block;padding-left:15px;text-indent:-15px}.ui-gdText-dialog .inputs input.checkbox{width:13px;height:13px;padding:0;margin:0;vertical-align:bottom;position:relative;top:-1px;*overflow:hidden}.ui-gdText-dialog .inputs .description{margin:5px 0 0;padding:0;text-indent:0}.ui-gdText-dialog .inputs .error{display:block;margin:2px 0 0;padding:0}.ui-gdText .widget-edit-config-panel textarea{width:95%;height:200px}.ui-gdText .widget-edit-config-panel .edit-frame{width:100%}.ui-gdText .widget-edit-config-panel .mobile-failure{border-color:#D00000;background-color:#FFDCDC;background-image:url(https://img1.wsimg.com/widgetfw/widgetservices/v2.1.07/images/Text/alert_red.png);padding:10px 10px 10px 45px;border-width:1px;border-style:solid;color:#000;background-repeat:no-repeat;background-position:10px center;margin-bottom:5px;position:relative}.ui-gdText .widget-edit-config-panel .disabled{background-color:#ccc;color:#999} </style></head>
+
+  <body class="non-admin compliant rslrgd" style="background-color: rgb(0, 0, 0);">
+
+
+    <div class="site-wrapper">
+
+    <div id="ss-background" class="ss-background" style="position: fixed; z-index: -1000; background-image: url(&quot;https://nebula.wsimg.com/obj/RkM1QTE2MzRDRjY3QTMwREMyMjA6N2IwMTA4NWIxNGI0Y2QxMzQ0OWMwYzE4NThhN2ZhZTc=&quot;); background-repeat: no-repeat; background-position: 50% 50%; height: 100%; width: 100%; background-color: rgb(0, 0, 0);"></div>
+
+      <div id="page" class="page layout1-l" style="top: 0px; overflow: hidden auto;">
+
+<div id="content">
+    <div id="ss-mainContainer" style="visibility: visible;">
+        <div id="ss-main" class="ss-main">
+
+            <div id="ss-about" style="background-color: rgb(0, 0, 0);">
+
+<h1 id="ss-name" class="ss-title" style="zoom: 1; cursor: pointer; color: rgb(255, 255, 255); font-family: JungleFever; font-size: 60px;">CodeFu Monkey</h1>
+<div id="ss-description" class="ss-description" style="color: rgb(255, 255, 255); font-family: Tahoma; font-size: 16px;"><span>The CodeFu Is Strong With This Monkey.</span><br></div>
+
+            </div>
+
+<div id="ss-launcher" style="background-color: rgb(153, 153, 153);">
+  <ul>
+    <li class="link-home" style="display: none; border-color: rgb(255, 255, 255);"><a class="ss-service" href="javascript:$ss.hideWidgets();" style="color: rgb(255, 255, 255); font-family: Tahoma; font-size: 16px;">Home</a></li>
+
+        <li style="border-color: rgb(255, 255, 255);"><a class="ss-service open" href="#" wid="SS16303lCJbBpeE3V" onclick="javascript:$ss.showWidget('SS16303lCJbBpeE3V', $j(this));" style="color: rgb(255, 255, 255); font-family: Tahoma; font-size: 16px;">Shawn Oden - Resume<div class="accordion-button" style="border-color: rgb(255, 255, 255);"><div class="accordion-arrow-inheritor" style="border-color: rgb(255, 255, 255);"><div class="accordion-arrow"></div></div></div></a></li>
+
+        <li style="border-color: rgb(255, 255, 255);"><a class="ss-service closed" href="#" wid="SS163034bdzONfHj5" onclick="javascript:$ss.showWidget('SS163034bdzONfHj5', $j(this));" style="color: rgb(255, 255, 255); font-family: Tahoma; font-size: 16px;">My Jabberings<div class="accordion-button" style="border-color: rgb(255, 255, 255);"><div class="accordion-arrow-inheritor" style="border-color: rgb(255, 255, 255);"><div class="accordion-arrow"></div></div></div></a></li>
+
+        <li style="border-color: rgb(255, 255, 255);"><a class="ss-service closed" href="#" wid="SS163031kaRoRVKks" onclick="javascript:$ss.showWidget('SS163031kaRoRVKks', $j(this));" style="color: rgb(255, 255, 255); font-family: Tahoma; font-size: 16px;">Advice To Recruiters<div class="accordion-button" style="border-color: rgb(255, 255, 255);"><div class="accordion-arrow-inheritor" style="border-color: rgb(255, 255, 255);"><div class="accordion-arrow"></div></div></div></a></li>
+
+        <li style="border-color: rgb(255, 255, 255);"><a class="ss-service closed" href="#" wid="SS16303go5xiSB61E" onclick="javascript:$ss.showWidget('SS16303go5xiSB61E', $j(this));" style="color: rgb(255, 255, 255); font-family: Tahoma; font-size: 16px;">Talk To Me<div class="accordion-button" style="border-color: rgb(255, 255, 255);"><div class="accordion-arrow-inheritor" style="border-color: rgb(255, 255, 255);"><div class="accordion-arrow"></div></div></div></a></li>
+
+    <li id="menu-affiliate-link" style="display: none; border-color: rgb(255, 255, 255);" class="last">
+
+    </li>
+  </ul>
+</div>
+        </div>
+    </div>
+    <div id="ss-widgetContainer" style="background-color: rgb(51, 51, 51); font-family: Tahoma;" class="gd-ss-switcher"><div id="SS16303lCJbBpeE3V-anchor" class="ssWidgetBox ss-block text-container" style="background-color: rgb(51, 51, 51); font-family: Tahoma; position: absolute; top: 0px; width: 430px; opacity: 1;"><div class="widget-container type-text normal" id="SS16303lCJbBpeE3V" style="display: block;"><div class="title-bar" style="color: rgb(255, 255, 255); border-color: rgb(153, 153, 153);"><img class="widget-title-icon" style="display:none;"><span class="widget-title">Shawn Oden - Resume</span><div class="navigation"><span class="close" onclick=""></span></div></div><div class="loading-text" style="position: relative; text-align: center; top: 0px; left: 0px; display: none;">Loading...</div><div class="widget-instance ui-gdTextSS16303lCJbBpeE3V ui-gdText" id="SS16303lCJbBpeE3V-text-normal" style="top: 0px; left: 0px; color: rgb(255, 255, 255);"><div class="ui-gdText-container" style="color: rgb(255, 255, 255);">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div style="color: rgb(255, 255, 255);"><div style="color: rgb(255, 255, 255);"><b>Shawn P. Oden</b></div><div style="color: rgb(255, 255, 255);"><b>Database Administrator | SQL Developer/Data Analyst | Web Developer</b></div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>WHAT TECH SKILLS HAVE I USED?</b></div><div style="color: rgb(255, 255, 255);">- Microsoft SQL Server(T-SQL) (&lt;2000-2016) | Oracle PL-SQL | MySQL | MS Access</div><div style="color: rgb(255, 255, 255);">- ColdFusion / CFML (Adobe/Lucee/Railo)</div><div style="color: rgb(255, 255, 255);">- Microsoft SQL Server Reporting Services (SSRS) | Seagate Crystal Reports | SAP Business Objects</div><div style="color: rgb(255, 255, 255);">- Microsoft Sharepoint</div><div style="color: rgb(255, 255, 255);">- Microsoft SSIS</div><div style="color: rgb(255, 255, 255);">- C# / ASP.Net | Visual Basic 6 | Java</div><div style="color: rgb(255, 255, 255);">- HTML / CSS / Javascript</div><div style="color: rgb(255, 255, 255);">- Adobe Photoshop | GIMP | Adobe Illustrator</div><div style="color: rgb(255, 255, 255);">- Microsoft Office Suite<span style="white-space: pre; color: rgb(255, 255, 255);">		</span></div><div style="color: rgb(255, 255, 255);">- Version Control: Git | Subversion | Mercurial | SourceSafe</div><div style="color: rgb(255, 255, 255);">- Bug Management: Jira</div><div style="color: rgb(255, 255, 255);">- Code Management: Crucible | Fisheye</div><div style="color: rgb(255, 255, 255);">- Continuous Integration: Cruise Control | Jenkins</div><div style="color: rgb(255, 255, 255);">- Process Automation: Automise</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>WHAT CERTIFICATIONS DO I HOLD?</b></div><div style="color: rgb(255, 255, 255);">- Microsoft Certified Solutions Expert (MCSE): Data Management and Analytics</div><div style="color: rgb(255, 255, 255);">&nbsp;-Microsoft Certified Solutions Associate (MCSA): SQL 2016 – Database Administration</div><div style="color: rgb(255, 255, 255);">- Microsoft Certified Solutions Associate (MCSA): SQL 2016 – Database Development</div><div style="color: rgb(255, 255, 255);">- Microsoft Certified Professional – SQL 2012/2014</div><div style="color: rgb(255, 255, 255);">- Adobe Certified ColdFusion Specialist</div><div style="color: rgb(255, 255, 255);">- Active U.S. DoD CAF Top Secret Level Security Clearance</div><div style="color: rgb(255, 255, 255);">- CompTIA Security+ (Current CE Renewal)</div><div style="color: rgb(255, 255, 255);">- Adobe Certified ColdFusion MX 7 Developer</div><div style="color: rgb(255, 255, 255);">- Certified Macromedia ColdFusion MX Developer</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>WHERE HAVE I WORKED?</b></div><div style="color: rgb(255, 255, 255);"><b>Database Administrator - Tier III / Contractor&nbsp;</b></div><div style="color: rgb(255, 255, 255);"><b>Jacobs</b> <i>(Dallas, TX)</i><b> | Systems Plus, Inc </b><i>(Rockville, MD)</i><b> | ISPA Technology, Inc </b><i>(Tampa, FL)</i><b>.</b> October 2016 - Present.&nbsp;</div><div style="color: rgb(255, 255, 255);"><b><i>USSOCOM</i></b><i>, Ft. Campbell, KY. Contract ran October 2016 - Present. Converted to W2 in 2020.&nbsp;</i></div><div style="color: rgb(255, 255, 255);">- I work in the Applications Management Group, supporting U.S. Army 160th SOAR operations.</div><div style="color: rgb(255, 255, 255);">- I primarily support Microsoft SQL Server 2016 database servers (Failover Clustered) and SharePoint &amp; SSRS reports.</div><div style="color: rgb(255, 255, 255);">- I support several intranet applications written in ASP / VB.Net and the Active Directory access of those users.</div><div style="color: rgb(255, 255, 255);">- I converted several MS SQL 2008/2012 databases to MS SQL 2016, applying STIGs for migration to the U.S. SOF system.</div><div style="color: rgb(255, 255, 255);">- I am a member of the Information Technology Change Control Board.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Web Application Developer / Consultant</b></div><div style="color: rgb(255, 255, 255);"><b><i>TEKSystems</i></b><i>, Charlotte, NC</i>. July 2016 - October 2016.</div><div style="color: rgb(255, 255, 255);">- I was a contract developer for a large telecommunications company. My primary project involved employee retention&nbsp; and performance reporting and analysis.</div><div style="color: rgb(255, 255, 255);">- Work was primarily done in ColdFusion 9 with a SQL2012 database. We also used Bootstrap, FW/1 and others.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Software Engineer</b></div><div style="color: rgb(255, 255, 255);"><b><i>Wyle Laboratories, Inc - Aerospace Group</i></b><i>, Jacksonville, FL.</i> July 2015 - June 2016.</div><div style="color: rgb(255, 255, 255);">- I was a member of the application development team for a government military contractor. Our primary projects involved aircraft maintenance.</div><div style="color: rgb(255, 255, 255);">- Work was primarily done in ColdFusion 10 and jQuery with an Oracle database. We made heavy use of several jQuery plugins, like DataTables and HighCharts.</div><div style="color: rgb(255, 255, 255);">- I obtained a U.S. DoD Secret Security Clearance and CompTIA Security+ Certification.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Data Analyst</b></div><div style="color: rgb(255, 255, 255);"><b><i>Benefit Communications, Inc.</i></b><i>, Nashville, TN.</i> September 2012 - July 2015.</div><div style="color: rgb(255, 255, 255);"><i>Contracted through Robert Half Technology, September 2012 - May 2013. Then converted to full-time.</i></div><div style="color: rgb(255, 255, 255);">- I was a member of the IT team of an employee benefits company. My work was primarily done in Microsoft SQL Server 2012, utilizing SQL queries and in-house technologies to build benefit enrollment data exports to transmit to benefit carriers.</div><div style="color: rgb(255, 255, 255);">- My main focus was to improve the speed and simplicity of our process and to automate it where we can. I optimized one of our voluntary benefits processes and reduced the average setup time from 1-2 weeks to about 2 days or less. I also significantly reduced the chance of error in another of our voluntary benefit processes.</div><div style="color: rgb(255, 255, 255);">- I simplified our export setup process to automate many of the setup functions, reducing initial setup time from approx. 1-2 hours to less than 2 minutes. This process completes about 85-90% of the necessary initial setup and customization.</div><div style="color: rgb(255, 255, 255);">- I documented and standardized our export processes so that we were able to on-board new data analysts quickly and minimize potential error points in our carrier exports.</div><div style="color: rgb(255, 255, 255);">- I converted several databases and systems from SQL 2005 to SQL 2012 and worked with our other developers to convert some of our export processes from a Microsoft SSIS system to a custom-built system that utilizes heavier T-SQL queries, but significantly improves efficiency, readability and reuse.</div><div style="color: rgb(255, 255, 255);">- I had some light SQL Server admin duties, including backups/restores, replication, drive management and query tuning.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Software Engineer II / Business Intelligence Engineer II / IS Operations Engineer II – Information Services</b></div><div style="color: rgb(255, 255, 255);"><i><b>HireRight / Kroll Background America</b>, Nashville, TN.</i> September 2005 - September 2012.</div><div style="color: rgb(255, 255, 255);">- I was a member of the development team for an international background screening and credit fraud prevention / recovery company. The development was done primarily in ColdFusion MX7 with heavy Microsoft T-SQL back-end development. I also supported some VB6 and C# applications.</div><div style="color: rgb(255, 255, 255);">- I wrote several key processes for the background screening application, including a Motor Vehicle Records Check processor and an Authorization Form screening process using SQL stored procedures, a Fraud Claims application, a weather web service, a driver management application using CFCs and Flex, and various support and reporting utilities.</div><div style="color: rgb(255, 255, 255);">- I also worked in the Data Services group as a Business Intelligence Engineer, using Business Objects and Microsoft T-SQL to generate reports for the business and for customers. I did a lot of hand coding SQL to generate complex ad hoc reports.</div><div style="color: rgb(255, 255, 255);">- I assisted the IS Operations and Software Engineering Support Desk groups with high-level technical support, including break fixes and new programming requests, and I generated various business reports using SQL queries and VB processes. I built several tools to improve the productivity of the workgroup. I converted several manual processes and recurring queries into scheduled tasks that required minimal interaction, saving significant man-hours.</div><div style="color: rgb(255, 255, 255);">- I performed troubleshooting and basic work with our .Net and VB applications in Visual Studio (VS.Net through VS2010). I also participated in a training program to improve my skills with the .Net languages. After our primary VB developer left I took over management duties of two of our older, critical VB6 applications: a task server and our data import utility.</div><div style="color: rgb(255, 255, 255);">- I worked with Subversion source control system and Crucible / Fisheye code review and repository search utilities. I worked with other team developers to transition to a more Agile 2-week deployment cycle. I assisted with a continuous integration solution with Subversion, Cruise Control and Jenkins.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Web Application Developer / Consultant</b></div><div style="color: rgb(255, 255, 255);"><i><b>Robert Half International Technology</b>, Nashville, TN.</i> April 2008 - July 2011.</div><div style="color: rgb(255, 255, 255);"><i><b>Hudson Yards</b>, Nashville, TN.</i> <i>Part-Time Contract ran April 2008 to October 2009 with ongoing development tasks through July 2011.</i></div><div style="color: rgb(255, 255, 255);">- I was both an on-site and remote development asset to add functionality and provide bug fixes for their Publication Layout Management application. This was a ColdFusion MX application with a very heavy MS SQL stored procedure back end.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Web Application Developer / Consultant</b></div><div style="color: rgb(255, 255, 255);"><i><b>VACO, LLC</b>, Nashville, TN.</i> April 2005 - August 2005.</div><div style="color: rgb(255, 255, 255);"><i><b>Homeland Security Corporation</b>, Nashville, TN.</i> <i>Contract ran April 2005 - August 2005.</i></div><div style="color: rgb(255, 255, 255);">- I was a remote development team member of an online educational application for high school students to help prepare them for college-level courses. The development was done in ColdFusion MX, with a conversion of the existing PHP application into ColdFusion.</div><div style="color: rgb(255, 255, 255);">- I optimized SQL db tables, stored procedures and DTS Packages to maximize the efficient operation of site.</div><div style="color: rgb(255, 255, 255);">- The main application was a combination of a CBT (computer based training) program with a content management system. It allowed instructors and school administrators to add students &amp; instructors, to generate &amp; update course content, to schedule courses and to view student usage statistics. It allowed students to view course materials, to complete practice questions and to view their progress in their assigned courses.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Web Application Developer / Consultant</b></div><div style="color: rgb(255, 255, 255);"><i><b>Robert Half International Technology</b>, Memphis, TN.</i> April 2004 - April 2005.</div><div style="color: rgb(255, 255, 255);"><i><b>CDO Technologies</b>, O'Fallon, IL. Contract ran March 2005 - April 2005.</i></div><div style="color: rgb(255, 255, 255);">- I was a development team member of an inventory management web application built in ColdFusion MX for the U.S. Air Force. I created SQL database tables, stored procedures and queries to maximize efficient operation of the site and to generate required reporting information.</div><div style="color: rgb(255, 255, 255);">- My main project was for tracking time compliance inspections and verifying when they were due or had been done.</div><div style="color: rgb(255, 255, 255);"><i><b>Overton Distributors</b>, Nashville, TN. Contract ran January 2005 - February 2005.</i></div><div style="color: rgb(255, 255, 255);">- I developed a produce distributor’s vendor management web application. It was built in ColdFusion MX, with heavy utilization of an MS SQL database, stored procedures and DTS packages to maximize efficient operation of site.</div><div style="color: rgb(255, 255, 255);">- I set up applications to automatically generate required reports in various formats, including Excel, Crystal Reports and HTML.</div><div style="color: rgb(255, 255, 255);">- I trained employees on how to effectively use the application to ensure vendor compliance.</div><div style="color: rgb(255, 255, 255);"><i><b>NYK Logistics, GST Division</b>, Memphis, TN. Contract ran April 2004 - December 2004.</i></div><div style="color: rgb(255, 255, 255);">- I was responsible for development and maintenance of an existing transportation logistics web application built in ColdFusion, including dynamic route tracking and report generation.</div><div style="color: rgb(255, 255, 255);">- I created and maintained SQL stored procedures and DTS packages.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Director of Service &amp; Support / Director of Fulfillment</b></div><div style="color: rgb(255, 255, 255);"><i><b>SCorp, Inc. dba Paperless Cockpit</b>, Cordova, TN.</i> June 2001 - May 2003.</div><div style="color: rgb(255, 255, 255);">- My primary function was to provide top-tier technical and sales support to our customers.</div><div style="color: rgb(255, 255, 255);">- I managed the RMA process. I troubleshot our tablet PC merchandise to determine if in-house or warranty repair was needed, and I ensured a rapid turn-around on all repairs.</div><div style="color: rgb(255, 255, 255);">- I established a web-based system to track and identify recurring problems.</div><div style="color: rgb(255, 255, 255);">- I ensured the operation of support and warranty programs remained within budget constraints, I reported changes in budget requirements due to increased systems in the market and I forecast and prioritized support needs to meet current budgetary limitations.</div><div style="color: rgb(255, 255, 255);">- I fulfilled customer orders for tablet PCs and other wireless computing devices from beginning to end. This included placing, receiving and tracking vendor orders; monitoring inventory status; preparing systems for delivery; and ensuring delivery of products to customers.</div><div style="color: rgb(255, 255, 255);">- I created an online system for tracking orders and facilitating shipment to customers.</div><div style="color: rgb(255, 255, 255);">- I managed contract employee and intern schedules to meet our support and fulfillment needs.</div><div style="color: rgb(255, 255, 255);">- I participated in research and development of new products and services, and I evaluated our current products and services for profitability and operational value.</div><div style="color: rgb(255, 255, 255);">- As part of Account Management, I oversaw accounts receivables and worked with accounting staff to warn of delinquent accounts and advise on collection efforts.</div><div style="color: rgb(255, 255, 255);">- As one of the company's subject matter experts on both technical and aviation material, I represented the company at major aviation venues, like the National Business Aviation Association Annual Convention.</div><div style="color: rgb(255, 255, 255);">- This venture was started as a project of Enterprise Media before it was transitioned into the primary position and Enterprise Media was wound down.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Lead Web Application Developer</b></div><div style="color: rgb(255, 255, 255);"><i><b>Enterprise Media, LLC</b>, Cordova, TN.</i> April 2000 - December 2002.</div><div style="color: rgb(255, 255, 255);">- I was responsible for Web Development for our various clients, utilizing programming skills in ColdFusion, HTML, JavaScript, CSS, MS SQL, MS Access and other technologies. I was also proficient in several graphic design applications, including Photoshop and Illustrator.</div><div style="color: rgb(255, 255, 255);">- My client management responsibilities included coordinating design requirements with some of our major clients, such as FedEx Air Operations Division and Nursing Innovations, LLC.</div><div style="color: rgb(255, 255, 255);">- I designed and developed company intranet/extranet applications to improve efficiency of daily operations.</div><div style="color: rgb(255, 255, 255);">- I designed a web application for nurse scheduling, time and attendance tracking and payroll.</div><div style="color: rgb(255, 255, 255);">- I designed several web enabled front ends to interface with client legacy systems.</div><div style="color: rgb(255, 255, 255);">- I was responsible for intra-company computer hardware/software maintenance.</div><div style="color: rgb(255, 255, 255);">- I was responsible for training new hire developers and interns.</div><div style="color: rgb(255, 255, 255);">- I designed a full-featured Content Management system that would function under a variety of databases and operating systems. As part of that, I converted the original Access/MSSQL database to an Oracle/PL-SQL database that the client switched to. I built and integrated a Survey/Questionnaire engine for gathering employee feedback.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>FOD (Foreign Object Debris/Damage) Prevention Specialist</b></div><div style="color: rgb(255, 255, 255);"><i><b>FedEx Express Corporation - Flight Safety</b>, Memphis, TN.</i> June 1998 - May 2000.</div><div style="color: rgb(255, 255, 255);">- My primary goal was to work with the Flight Safety Department to reduce engine damage from FOD and to increase awareness of the problem.</div><div style="color: rgb(255, 255, 255);">- I developed a program to track aircraft engine damage due to debris and to generate statistical reports for my management team. I also developed a FOD awareness campaign to help eliminate debris on FedEx ramps. This included an internal FOD Awareness Web site.</div><div style="color: rgb(255, 255, 255);">- I created the processes and procedures for several ongoing projects, including daily FOD inspections and write-ups; FOD incident investigation, tracking and analysis; research, development and implementation of FOD prevention practices within the FedEx system.</div><div style="color: rgb(255, 255, 255);">- I assisted in sweeper truck acquisition, operation, and program development.</div><div style="color: rgb(255, 255, 255);">- Some of my other duties included trend monitoring and computer research.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Technical Consultant / Publication Specialist</b></div><div style="color: rgb(255, 255, 255);"><i><b>FedEx Express Corporation - Employee Communications</b>, Memphis, TN.</i>&nbsp;September 1997 - May 2000.</div><div style="color: rgb(255, 255, 255);">- I was responsible for writing, editing and proofreading various internal publications, and for providing technical information on aviation related subjects; i.e. aircraft operations, FOD.</div><div style="color: rgb(255, 255, 255);">- I assisted with online publication of content.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Pilot / Flight Instructor</b></div><div style="color: rgb(255, 255, 255);"><i><b>Shawn P. Oden - Pilot Services</b>, Cordova, TN.</i> January 1993 - February 2004.</div><div style="color: rgb(255, 255, 255);">- I provided FAA Part 91 pilot services, including primary, advanced and instrument flight and ground instruction.</div><div style="color: rgb(255, 255, 255);">- I participated with the Boy Scout Aviation Explorers group as a mentor, including chaperoning two trips to the EAA AirVenture Oshkosh Fly-In in Oshkosh, WI, where we volunteered to work in the International Aerobatic Club's on-field shop during the air show.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>Flight Instructor / Supervisor</b></div><div style="color: rgb(255, 255, 255);"><i><b>Louisiana Tech University - Dept. of Professional Aviation</b>, Ruston, LA.</i> September 1993 - June 1996.</div><div style="color: rgb(255, 255, 255);">- I provided FAA Part 141 primary, advanced and instrument flight and ground instruction.</div><div style="color: rgb(255, 255, 255);">- I also supervised other flight instructors and the scheduling of students and aircraft.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>WHERE DID I GO TO SCHOOL?</b></div><div style="color: rgb(255, 255, 255);"><b>Louisiana Tech University.&nbsp;</b>March 1993 - May 1995.&nbsp;<b><i>B.S. in Professional Aviation.</i>&nbsp;&nbsp;</b><b><i>Minor in Air Carrier Operations.&nbsp;</i></b></div><div style="color: rgb(255, 255, 255);">Attended classes in advanced aircraft systems, i.e. Electrical, Turbine Engines, Pneumatics and Hydraulics. Member of Gamma Beta Phi International Honor Society. Also obtained Multi-engine Flight Instructor Certificate.</div><div style="color: rgb(255, 255, 255);">- Bolivar Aviation International Flight Academy. Professional Pilot Program. August 1992 - January 1993.</div><div style="color: rgb(255, 255, 255);">Accelerated Pilot Training School.</div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>WHERE HAVE I PRESENTED?</b></div><div style="color: rgb(255, 255, 255);">-&nbsp;<i><b>Into the Box 2023</b>&nbsp;(May '23) - "HANDS ON: SQL Sleuth" - SQL Query Training. (</i><a href="https://www.intothebox.org" target="_blank" class="widget-link" style="color: rgb(153, 153, 153);">Event</a><i>)</i></div><div style="color: rgb(255, 255, 255);"></div><div style="color: rgb(255, 255, 255);">- <i><b>PASS Data Community Summit 2022</b> (Nov '22) - "You've Been Hit By A Bus" - Personal Disaster Preparedness </i>(<a href="http://passdatacommunitysummit.com" target="_blank" class="widget-link" style="color: rgb(153, 153, 153);">Event</a>)</div><div style="color: rgb(255, 255, 255);">-&nbsp;<i><b>Into the Box 2022</b>&nbsp;(Sept '22) - "I'm Just Here For The T-Shirt" - Impostor Syndrome (</i><a href="https://www.intothebox.org/into-the-box-2022" target="_blank" class="widget-link" style="color: rgb(153, 153, 153);">Event</a><i>)</i></div><div style="color: rgb(255, 255, 255);"></div><div style="color: rgb(255, 255, 255);">-&nbsp;<i><b>Into the Box 2021</b>&nbsp;(Sept '21) - "Don't Go Breakin' My Heart" - Insider Threat Awareness (</i><a href="https://www.intothebox.org/into-the-box-2021" target="_blank" class="widget-link" style="color: rgb(153, 153, 153);">Event</a><i>)</i></div><div style="color: rgb(255, 255, 255);"><div style="color: rgb(255, 255, 255);">-&nbsp;<i><b>Online ColdFusion Meetup #283</b>&nbsp;(Feb '21) - "The Golden Hammer (v2)" - SQL for Programmers (</i><a href="https://www.meetup.com/coldfusionmeetup/events/276405673/" target="_blank" class="widget-link" style="color: rgb(153, 153, 153);">Event</a><i>) (</i><a href="https://www.youtube.com/watch?v=tq2t6ulM4hY&amp;list=PLG2EHzEbhy0-QirMKgSxhjkUyTSSTvHjL" target="_blank" class="widget-link" style="color: rgb(153, 153, 153);">Recording</a><i>)</i></div></div><div style="color: rgb(255, 255, 255);">- <b><i>Into the Box 2020</i> </b><i>(May '20)</i> <i>"The Golden Hammer"</i> - <i>SQL for Programmers (</i><a href="https://www.intothebox.org/into-the-box-2020" target="_blank" class="widget-link" style="color: rgb(153, 153, 153);">Event</a><i>)</i></div><div style="color: rgb(255, 255, 255);"><br></div><div style="color: rgb(255, 255, 255);"><b>WHAT ELSE HAVE I DONE?</b></div><div style="color: rgb(255, 255, 255);">- I participated with a group at <b>HackTN 2015</b> to create a system to teach kids to code with <i>Arduinos</i> and <i>Legos</i>. <i><b>(BloxBot)</b></i></div><div style="color: rgb(255, 255, 255);">- I am the former manager of the <b>Nashville ColdFusion User Group</b>.&nbsp;</div><div style="color: rgb(255, 255, 255);">- I volunteered from 2012 to 2015 with <b><i>Hume-Fogg High School</i></b> to update their website when they had changes.</div><div style="color: rgb(255, 255, 255);">- I have participated in both open and closed Beta test programs for several commercial software applications.</div><div style="color: rgb(255, 255, 255);">- I have worn many different hats throughout my career. I’m a self-taught developer. I have basic knowledge in small electronics troubleshooting. I’ve set up and moved small business networks a few times. I run my own network at home, including a couple of development systems. I’m not always the fastest guy with a task, but I pride myself on attention to detail. I’m not afraid to try on a new hat, and I’m always willing to learn something new.</div><div style="color: rgb(255, 255, 255);">- I still renew my <b><i>FAA Certified Flight Instructor</i></b> certificate every two years.</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div></div></div></div></div>
+</div>
+
+
+<div id="sharePanel"></div>
+
+
+
+
+      </div>
+    </div>
+    <script>'undefined' === typeof _trfq || (window._trfq = []);'undefined' === typeof _trfd && (window._trfd=[]), _trfd.push({ 'ap':'IPv1' });</script><script src="//img1.wsimg.com/tcc/tcc_l.combined.1.0.5.min.js" async=""></script>
+
+</body></html>

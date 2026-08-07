@@ -1,0 +1,105 @@
+/* Standard Black Button */
+
+a.black-css3-button,
+a.black-css3-button:link,
+a.black-css3-button:visited {
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    text-decoration:none;
+    display:inline-block;
+    font-family: verdana, Sans-Serif;
+    font-weight: bold;
+    background-image: url(../images/common/black-button-bg-css3.png);
+    background-repeat:repeat-x;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    padding: 3px 10px;
+    text-decoration:none;
+    cursor:pointer;
+    text-align: center;
+    height: 15px;
+
+    /*behavior: url(Content/style/PIE.htc);*/
+}
+
+a.black-css3-button:hover {
+    background-image: url(../images/common/black-button-bg-hover-css3.png);
+    /*color: #fff !important;*/
+}
+
+a.black-css3-button:active {
+    background-image: url(../images/common/black-button-bg-active-css3.png);
+    /*color: #fff !important;*/
+}
+
+a.black-css3-button,
+a.black-css3-button:active {
+    outline: none;
+} 
+
+a.black-css3-button.disable,
+a.black-css3-button.disable:link,
+a.black-css3-button.disable:visited {
+    border: 1px solid #a5a5a5;
+    background-color: #a5a5a5;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    text-decoration:none;
+    display:inline-block;
+    font-family: verdana, Sans-Serif;
+    font-weight: bold;
+    background-image: url(../images/common/black-button-bg-disabled-css3.png);
+    background-repeat:repeat-x;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 10px 4px;
+    cursor: default;
+    height: 15px;
+
+    /*behavior: url(Content/style/PIE.htc);*/
+}
+
+a.black-css3-button.disable:hover {
+    background-image: url(../images/common/black-button-bg-disabled-css3.png);
+    color: #fff !important;
+}
+
+a.black-css3-button.disable,
+a.black-css3-button.disable:active {
+    outline: none;
+    color: #fff !important;
+}
+
+/* Standard silver button */
+
+.silver-button,
+.silver-button:hover
+{
+    background-color: #eaeaea;
+    background-image: url(../images/common/silver-button-background.gif);
+    background-repeat: repeat;
+    border: 1px solid #b1b1b1;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Verdana;
+    padding: 2px 10px 2px 10px;
+    vertical-align: text-bottom;
+    width: auto;
+    height: 14px;
+    overflow: visible;
+    cursor: pointer;
+    color: #010101 !important;
+}
+
+.silver-button.disable,
+.silver-button.disable:hover
+{
+    color: White;
+    cursor: default;
+}

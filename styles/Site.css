@@ -1,0 +1,832 @@
+*   /* Reset all default margins and paddings for maximal CSS compatibility */
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-size: .75em;
+    font-family: Arial, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+
+a:link
+{
+    color: #034af3;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	/* fix for IE sometimes rendering duplicate words when line wrapping */
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/common/transparent.png,sizingMethod=crop);
+    zoom:1;
+   
+	/* fix to possibly fix fonts in webkit/Safari/iDevices */
+	text-rendering: optimizeLegibility;
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
+	
+    /* fix to smooth text in Chrome*/
+    text-shadow: 0 0 0.1em transparent;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+
+#main
+{
+    padding: 30px 30px 15px 30px;
+    margin-bottom: 30px;
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input[type="text"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+textarea
+{
+    font-family: Arial, Helvetica, Sans-Serif;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #e8eef4; 
+  border: solid 1px #e8eef4;   
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color:Red;
+}
+
+div#title
+{
+    display:block;
+    float:left;
+    text-align:left;
+}
+
+#logindisplay
+{
+    display:block;
+    margin-right: 15px;
+    position: fixed;
+    right: 20px;
+    top: 0;
+    z-index: 2100;
+}
+
+.ie.legacy #logindisplay
+{
+    position: absolute;
+}
+
+#logindisplay a
+{
+    display: block;
+    width: 103px;
+    height: 20px;
+}
+
+#login-link
+{
+    background-image: url(../images/common/tab_login.png);
+}
+
+#logoff-link
+{
+    background-image: url(../images/common/tab_logoff.png);
+}
+
+.watermark
+{
+    color: #bfbfbf !important;
+}
+
+/* Watermark styles for HTML5 placeholders */
+input::-webkit-input-placeholder
+{
+    color: #bfbfbf !important;
+}
+textarea::-webkit-input-placeholder
+{
+    color: #bfbfbf !important;
+}
+input:-moz-placeholder
+{
+    color: #bfbfbf !important;
+}
+textarea:-moz-placeholder 
+{
+    color: #bfbfbf !important;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label,
+.display-field,
+.editor-field
+{
+    margin: 0.5em 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+/* Notifications
+------------------------------------------------------------- */
+
+.ui-flyout-background
+{
+	background-color: #a0a0a0;
+}
+
+.notification-growl
+{
+	color: #fff;
+	font-weight: bold;
+}
+
+.notification-growl.bg , .error-bubble.bg { background-image: url(../images/growls/growl_back.png); }
+.notification-growl, .error-bubble
+{
+}
+.notification-growl div, .error-bubble div
+{
+    position: absolute;
+    background-repeat: no-repeat;
+}
+.notification-growl .tl, .error-bubble .tl 
+{
+    background-image: url(../images/growls/growl_tl.png); 
+    top: -7px;
+    left: -7px;
+    width: 7px;
+    height: 7px;
+}
+.notification-growl .tr, .error-bubble .tr  
+{
+    background-image: url(../images/growls/growl_tr.png); 
+    top: -7px;
+    right: -7px;
+    width: 7px;
+    height: 7px;
+}
+.notification-growl .t , .error-bubble .t   
+{
+    background-image: url(../images/growls/growl_top.png); 
+    top: -7px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 7px;
+    background-repeat: repeat-x;
+}
+.notification-growl .l , .error-bubble .l  
+{ 
+    background-image: url(../images/growls/growl_left.png); 
+    top: 0px;
+    bottom: 0;
+    left: -7px;
+    width: 7px;
+    background-repeat: repeat-y;
+}
+.notification-growl .r , .error-bubble .r
+{
+    background-image: url(../images/growls/growl_right.png); 
+    top: 0px;
+    bottom: 0;
+    right: -7px;
+    width: 7px;
+    background-repeat: repeat-y;
+}
+.notification-growl .bl, .error-bubble .bl 
+{ 
+    background-image: url(../images/growls/growl_bl.png); 
+    bottom: -7px;
+    left: -7px;
+    width: 7px;
+    height: 7px;
+    background-position: bottom;
+}
+.notification-growl .br, .error-bubble .br  
+{
+    background-image: url(../images/growls/growl_br.png); 
+    bottom: -7px;
+    right: -7px;
+    width: 7px;
+    height: 7px;
+    background-position: bottom;
+}
+.notification-growl .b , .error-bubble .b   
+{
+    background-image: url(../images/growls/growl_bottom.png); 
+    bottom: -7px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 7px;
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+.legacy.ie .notification-growl, .legacy.ie .error-bubble
+{
+    width: 150px;
+    text-align: center;
+}
+
+.legacy.ie .notification-growl div, .legacy.ie .error-bubble div
+{
+    z-index: -1;
+}
+
+.cygnus-notification-dialog
+{
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.cygnus-notification-dialog .widget-head
+{
+	background-color: #090909;
+	background: -webkit-gradient(linear,left top,left bottom,from(#404148),to(#090909));
+    background: -moz-linear-gradient(top,#404148,#090909);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#404148',endColorstr='#090909');
+	font-size: 12px;
+	text-transform:none;
+	padding: 10px 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	position: relative;
+}
+
+.cygnus-notification-dialog .widget-body-content
+{    
+    margin:20px;    
+    font-family:Arial;
+    font-size:12px;
+    line-height:16px;
+    color:#000000;
+    text-align:left;
+}
+
+.cygnus-notification-dialog .widget-head-close
+{
+    background-image: url(../images/common/icon-modal-close.png);
+    width:15px;
+    height:15px;
+    right:7px;
+    top:7px;
+    cursor:pointer;
+    position:absolute;
+}
+
+.cygnus-notification-dialog .browser-list
+{    
+    padding-top:20px;    
+    padding-bottom:10px;
+    height:47px;    
+}
+
+.cygnus-notification-dialog .browser-list ul
+{
+    list-style:none;        
+}
+
+.cygnus-notification-dialog .browser-list li
+{
+    float:left;    
+    width: 123px;
+     white-space:nowrap;
+    overflow:hidden;
+}
+
+.cygnus-notification-dialog .browser
+{
+    width:113px;
+    height:47px; 
+    display:block;    
+}
+
+.cygnus-notification-dialog .browser.ff
+{
+    background: transparent url(../images/browsers/btn_ff.gif) no-repeat;    
+}
+
+.cygnus-notification-dialog .browser.ff.selected
+{
+   background: transparent url(../images/browsers/btn_ff_h.gif) no-repeat;     
+}
+
+.cygnus-notification-dialog .browser.ie
+{
+    background: transparent url(../images/browsers/btn_ie.gif) no-repeat;
+}
+.cygnus-notification-dialog .browser.ie.selected
+{
+    background: transparent url(../images/browsers/btn_ie_h.gif) no-repeat;
+}
+
+.cygnus-notification-dialog .browser.chrome
+{
+    background: transparent url(../images/browsers/btn_chrome.gif) no-repeat;        
+}
+
+.cygnus-notification-dialog .browser.chrome.selected
+{
+    background: transparent url(../images/browsers/btn_chrome_h.gif) no-repeat;        
+}
+
+.cygnus-simple-dialog
+{	
+	background-color: #ffffff;
+}
+
+.modal-container
+{        
+  -moz-box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;    
+  border: 1px solid #BCBCBC;
+  background-color:#ffffff;
+}
+
+.welcome-dialog
+{
+	border: none !important;
+	background:none !important;
+}
+
+.cygnus-notification-dialog-buttons
+{
+	text-align: center;
+	margin: 0 0 20px 0; 
+	overflow: hidden;	
+	clear: both;
+}
+
+.cygnus-notification-dialog-buttons a.button-modal-cancel
+{
+    background-image: none;
+    background-color: transparent;
+    text-transform: none;
+    text-decoration: underline;
+    color: #0100FE;
+    font-weight: normal;
+    text-shadow: none;
+    border-style: none;
+}
+
+.cygnus-notification-dialog-buttons a.button-modal-cancel:active,
+.cygnus-notification-dialog-buttons a.button-modal-cancel:hover
+{
+    color: black;
+}
+
+.cygnus-notification-dialog-buttons a.button-modal-cancel.disable
+{
+    background-image: none;
+    background-color: transparent;
+    text-transform: none;
+    text-decoration: underline;
+    color: silver;
+    font-weight: normal;
+    text-shadow: none;
+    border-style: none;
+}
+
+.cygnus-simple-dialog-buttons .button-modal-close
+{
+	border: 1px solid #000;
+	background: #999 url(../images/comon/icon_dialog-close.png) no-repeat 50% 50%;
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	overflow: hidden;
+	text-indent: 900em;
+}
+
+/* for bubble flashtip */
+.message-body
+{
+	border: 1px solid #ddd;
+	background: #ffffaa;
+	padding: 20px;
+	color: black;
+	max-width:  250px;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+/* Widgets
+------------------------------------------------------------- */
+
+.widget-container .widget-title
+{
+	font-size: 16px;
+	margin-bottom: 5px;
+	line-height: 30px;
+}
+
+.widget-container .navigation
+{
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+	text-align: right;
+}
+
+.legacy.ie .widget-container .navigation
+{
+	top: 0;
+	right: 20px;
+	margin-top: -5px;
+}
+
+.widget-container .widget-title-icon
+{
+	vertical-align: bottom;
+	margin-bottom: 5px;
+}
+
+.widget-container .close
+{
+	background: transparent url(../images/common/icon_close-widget.gif) no-repeat 50% 50%;
+	height: 23px;
+	width: 23px;
+	text-indent: 9000em;
+	overflow: hidden;
+	position: absolute;
+	display:block;
+	right: 0;
+	top: 0;
+}
+
+.widget-container .close
+{
+	text-indent: 9000em;
+	overflow: hidden;
+	position: absolute;
+	display:block;
+	right: 0;
+	top: 0;
+}
+
+.admin .widget-container .close
+{
+	background: transparent url(../images/common/icon_close-widget.gif) no-repeat 50% 50%;
+	height: 23px;
+	width: 23px;
+}
+
+.non-admin .widget-container .close
+{
+	background: transparent url(../images/common/btn_contact_x.png);
+	height: 24px;
+	width: 24px;
+}
+
+.widget-container .title-bar
+{
+	margin: 0 0 20px 0;
+	clear: both;
+	overflow:hidden;
+	border-bottom: 1px solid;
+	position: relative;
+}
+
+.widget-container .widget-user-button
+{
+    border: 0px solid #ffffff; /* IE7 hack */
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.widget-container .widget-user-button.submit
+{
+    background-image: url(../images/common/btn_contact_submit.png);
+    width: 95px;
+    height: 35px;
+}
+
+.widget-container .widget-user-button.submit:hover
+{
+    background-image: url(../images/common/btn_contact_submit_h.png);
+}
+
+#appwaiter
+{
+	height: 54px;
+	width: 55px;
+	padding: 50px 50px 50px 51px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	text-align: center;
+	position: relative;
+}
+
+#appwaiter .color
+{
+	height: 54px;
+	width: 55px;
+	padding: 50px 50px 50px 51px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	/* Fallback for web browsers that doesn't support RGBa */
+	/*background-color: rgb(0, 255, 0);*/
+	/* RGBa with 0.6 opacity */
+	/*background-color: rgba(0, 255, 0, 0.5);*/
+	background-color: #000;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+
+#appwaiter .spinner-1, #appwaiter .spinner-2,
+#appwaiter .spinner-3, #appwaiter .spinner-4
+{
+	height: 55px;
+	width: 54px;
+	background-position: center top;
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+
+#appwaiter .spinner-2
+{
+	background-image: url(../images/common/waiter_mediumback.gif);
+}
+
+#appwaiter .spinner-1
+{
+	background-image: url(../images/common/waiter.gif);
+}
+
+#appwaiter .spinner-4
+{
+	background-image: url(../images/common/waiter_dark.gif);
+}
+
+#appwaiter .spinner-3
+{
+	background-image: url(../images/common/waiter_dark_mediumback.gif);
+}
+
+/* Advertising
+------------------------------------------------------------- */
+
+#sharePanel
+{
+	position: absolute;
+	top: 25px;
+	right: 20px;
+}
+div.cross-sell
+{
+    background-image: url(../images/common/flyout_repeat.png);
+    background-repeat: repeat-x;
+	right: -100%;
+    
+	position: fixed;
+	bottom: 20px;
+		
+	height: 30px;
+	min-width:350px;
+	font-size: 12px;
+	cursor: default;
+}
+
+.legacy.ie .cross-sell
+{
+	position: absolute;
+}
+
+.cross-sell .arrow
+{
+    background-image: url(../images/common/flyout_arrow.png);
+    background-repeat: no-repeat;
+    background-position: left 0;
+    height: 30px;
+    width: 18px;
+    float: left;
+    margin-left: -3px;
+}
+
+.cross-sell .blurb
+{
+    background-image: url(../images/common/flyout_repeat.png);
+    background-repeat: repeat-x;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    color: Black;
+    text-decoration: none;
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 0;
+    white-space: nowrap;
+}
+
+.cross-sell span
+{
+    color: #0033FF;
+    text-decoration: underline;
+}
+
+.rslrgd .cross-sell .logo  
+{
+    background-image: url(../images/common/gd/flyout_logo.png); 
+    width: 22px;
+}
+.rslrpl .cross-sell .logo  
+{
+    background-image: url(../images/common/pl/flyout_logo.png); 
+    width: 0;
+}
+
+.rslrgd .cross-sell .logo
+{
+    height: 30px;
+    float: left;
+    background-position: -6px 0;
+    background-repeat: no-repeat;
+}
+
+.preview-warning-info
+{
+    border: 1px solid #E0A61B;
+    padding: 12px 12px 12px 50px;
+    background: #FFFBCC url(../images/common/icon_alert_warning.png) 8px 8px no-repeat;
+    margin: 20px 0px;
+	color: #000000;	
+}

@@ -1,0 +1,117 @@
+.gd-shareLinks
+{
+    font-family: Arial, verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    /*background: #FFFFFF url(../images/modal_bg.gif) repeat-x scroll 0 0;*/
+    /*padding: 5px;*/
+    /*min-height: 180px;*/
+    /*border: 4px solid #fff;*/
+}
+.gd-shareLinks h1
+{
+	font-size: 17px;
+	border-bottom: 1px solid silver;
+	margin: 0 0 10px 0;
+	padding: 0 0 5px 0;
+}
+
+.gd-shareLinks-headerMain
+{
+	font-size: 17px;
+	font-weight:bold;
+	margin: 0 0 10px 0;
+	padding: 0 0 5px 0;
+}
+
+.gd-shareLinks-form dl { margin: 0px; padding: 0px; }
+.gd-shareLinks-form dt { margin: 10px 0 0 0; padding: 0px; }
+.gd-shareLinks-form dd
+{
+	margin: 3px 0;
+	padding: 0;
+}
+.gd-shareLinks-label
+{
+	/*font-weight: bold;*/
+	font-size: 12px;
+}
+.gd-shareLinks-error
+{
+	color: #a32120;
+	font-size: 14px;
+	padding: 10px 0;
+}
+.gd-shareLinks-formDisplay
+{
+	margin: 10px 0 0 0;
+	height: 140px;
+}
+.gd-shareLinks-formWait
+{
+	background: transparent url(../Images/loading.gif) no-repeat 50% 50%;
+}
+
+.gd-shareLinks-form textarea
+{
+	border: 1px solid transparent;
+}
+.gd-shareLinks-form td .gd-shareLinks-label
+{
+	margin: 10px 0 0 0;
+	display: block;
+}
+.gd-shareLinks ul
+{
+	display: block;
+	overflow: hidden;
+	margin: 0 4px 0 7px;
+	padding: 0;
+}
+.gd-shareLinks ul li
+{
+	display: inline;
+}
+.gd-shareLinks-link
+{
+	width: 26px;
+	height: 26px;
+	display: block;
+	float: left;
+	margin: 0 4px 0 0;
+	text-indent: -9000em;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	background-color:Transparent;
+	background-image: url(../images/common/shareIcons2.png);
+	border: 1px solid transparent;
+}
+.gd-shareLinks-link-active
+{
+	border-color: #ffaa00;
+}
+.gd-shareLinks-link-delicious {
+  background-position: -184px -67px;
+}
+.gd-shareLinks-link-digg {
+  background-position: -0px -0px;
+}
+.gd-shareLinks-link-facebook {
+  background-position: -127px -67px;
+}
+.gd-shareLinks-link-myspace {
+  background-position: -71px -67px;
+}
+.gd-shareLinks-link-stumbleupon {
+  background-position: -14px -67px;
+}
+.gd-shareLinks-link-twitter {
+  background-position: -240px -67px;
+}
+
+.gd-shareLinks dl { margin: 0px; padding: 0px; }
+.gd-shareLinks dt { margin: 0 0 0 0; padding: 0px; }
+
+.gd-shareLinks-background
+{
+	background-image: url(../Images/gd.shareLinks/testbackground.png);
+}
