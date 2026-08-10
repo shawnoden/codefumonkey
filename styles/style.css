@@ -1,0 +1,260 @@
+/* Load Custom Font */
+@font-face {
+    font-family: 'JungleFever';
+    src: url('JungleFeverNF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global Reset & Base Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    color: #FFFFFF;
+    /*background-color: #000000;*/
+}
+
+/* Fixed Background Image (Centered, NO scaling) */
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/cfm_background.png'); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto; /* Reverted to auto so it does NOT stretch/resize */
+    background-color: #000000;
+    min-height: 900px;
+    min-width: 1200px;
+    z-index: -1000;
+}
+
+/* Main Layout Wrapper */
+.site-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    /*max-width: 1200px;*/
+
+    margin: 50px auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+/* ==========================================================================
+   LEFT PANEL (About Section & Navigation)
+   ========================================================================== */
+.left-panel {
+    flex: 0 0 410px;
+    margin-top: 115px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Header Section (Title & Subtitle) */
+.header-section {
+    background-color: #000000;
+    padding: 10px 10px; 
+    padding-bottom: 1px;
+    border-radius: 8px;
+    /*border: 0px solid rgba(255, 255, 255, 0.1); */
+    /* Ensures the black background only wraps this specific div's content */
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.title {
+    font-family: 'JungleFever', cursive;
+    font-size: 64px;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: .8;
+    font-weight: normal;
+    text-align: left;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin: 8px 0 0 0;
+    text-align: left;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+/* Navigation Box */
+.navigation {
+    background-color: #999999;
+    border-radius: 8px;
+    overflow: hidden; 
+    border: 0px solid #FFFFFF;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    line-height: .8;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    border-bottom: none; 
+}
+
+.navigation a {
+    display: block;
+    padding: 4px 8px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    transition: background-color 0.2s, padding-left 0.2s;
+}
+
+.navigation a:hover {
+    background-color: #777777;
+    padding-left: 8px; 
+}
+
+/* ==========================================================================
+   RIGHT PANEL (Dynamic Content)
+   ========================================================================== */
+.right-panel {
+    flex: 0 0 750px; 
+    background-color: #333333;
+    border: 1px solid #999999;
+    border-radius: 8px;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    
+    /* --- Vertical Position Restored --- */
+    margin-top: 0; /* 👈 Restored back to the very top of the wrapper */
+    
+    /* 
+       Guarantees the bottom of this panel reaches or exceeds the bottom of the left panel:
+       Left Panel margin-top (50px) + Left Panel height (~265px) = 315px minimum height.
+    */
+    min-height: 315px; 
+    
+    height: fit-content; 
+    max-height: 90vh; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+
+    /* Animation State Controls */
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateX(50px); 
+    
+    transition: 
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+        opacity 0.4s ease-out, 
+        visibility 0.4s;
+}
+
+.right-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); 
+}
+
+.right-panel:not(.active) * {
+    pointer-events: none;
+}
+
+/* Panel Header */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e2e2e;
+    border-bottom: 1px solid #999999;
+    padding: 12px 15px;
+}
+
+.content-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.close-btn {
+    color: #999999;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #FFFFFF;
+}
+
+/* Panel Content Body */
+.content-body {
+    padding: 15px 25px;
+    font-size: 15px;
+    line-height: 1.25;
+    overflow-y: auto; 
+    
+    /* --- Firefox Scrollbar Support --- */
+    scrollbar-width: thin;
+    scrollbar-color: #999999 #2e2e2e;
+}
+
+/* --- Webkit Scrollbar Support (Chrome, Safari, Edge, Opera) --- */
+.content-body::-webkit-scrollbar {
+    width: 8px; /* Clean, slim scrollbar */
+}
+
+.content-body::-webkit-scrollbar-track {
+    background: #2e2e2e; /* Matches the dark header color */
+    border-radius: 0 0 8px 0; /* Smooth alignment with panel bottom corner */
+}
+
+.content-body::-webkit-scrollbar-thumb {
+    background-color: #999999; /* Gray scroll handle matching the nav menu */
+    border-radius: 4px;
+    border: 2px solid #2e2e2e; /* Creates a clean border gap around handle */
+}
+
+.content-body::-webkit-scrollbar-thumb:hover {
+    background-color: #777777; /* Subtle hover color change */
+}
+
+/* Typography & Inner Markdown Rendering Styles */
+.content-body h1, 
+.content-body h2, 
+.content-body h3 {
+    margin-top: 15px; /* Reduced from 20px */
+    margin-bottom: 5px; /* Reduced from 8px */
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 2px;
+}
+
+.content-body ul {
+    margin: 5px 0 10px 20px; /* Reduced margin above/below list blocks */
+    padding: 0;
+}
+
+.content-body li {
+    margin-bottom: 3px; /* Cut in half (was 6px) to compress list rows */
+}
+
+.content-body p {
+    margin: 0 0 8px 0; /* Cut in half (was 15px) to compress spacing between paragraphs */
+}

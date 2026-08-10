@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeFu Monkey</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="background-container"></div>
+    
+    <div class="site-wrapper">
+        <!-- Left Panel: Navigation & Title -->
+        <div class="left-panel">
+            <div class="header-section">
+                <h1 class="title">CodeFu Monkey</h1>
+                <p class="subtitle">The CodeFu Is Strong With This Monkey.</p>
+            </div>
+            
+            <nav class="navigation" id="main-nav">
+                <ul>
+                    <li><a href="#" data-target="resume.md" data-type="markdown" class="nav-link">Shawn Oden - Resume</a></li>
+                    <li><a href="https://jabberings.codefumonkey.com/" target="_blank" class="ext-link">My Jabberings</a></li>
+                    <li><a href="#" data-target="advice.md" data-type="markdown" class="nav-link">Advice To Recruiters</a></li>
+                    <li><a href="#" data-target="contact" data-type="html" class="nav-link">Talk To Me</a></li>
+                </ul>
+            </nav>
+        </div>
+
+         <!-- Right Panel: Dynamic Content (Now defaults to transitioning invisible) -->
+        <div class="right-panel" id="right-panel">
+            <div class="content-header">
+                <h2 id="content-title">Welcome</h2>
+                <span class="close-btn" id="close-panel" title="Close">&times;</span>
+            </div>
+            <div class="content-body" id="content-body">
+                <p>Loading...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contact Form Template (HTML) -->
+    <template id="tpl-contact">
+        <div class="contact-content">
+            <p>Fill out the form below to send me a message.</p>
+            <form id="contactForm" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </template>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
