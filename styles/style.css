@@ -11,8 +11,10 @@ body, html {
     margin: 0;
     padding: 0;
     min-height: 100%;
+    min-width: 900px;
     font-family: Tahoma, Verdana, Arial, sans-serif;
     color: #FFFFFF;
+    overflow-x: hidden;
     /*background-color: #000000;*/
 }
 
@@ -26,7 +28,7 @@ body, html {
     background-image: url('../images/cfm_background.png');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: auto; /* Reverted to auto so it does NOT stretch/resize */
+    background-size: auto;
     background-color: #000000;
     min-height: 900px;
     min-width: 1200px;
@@ -38,18 +40,23 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /*max-width: 1200px;*/
-
+    width: min(1200px, calc(100% - 40px));
+    min-width: 840px;
+    max-width: 1200px;
     margin: 50px auto;
     padding: 0 20px;
-    gap: 20px;
+    gap: 10px;
+    box-sizing: border-box;
 }
 
 /* ==========================================================================
     LEFT PANEL (About Section & Navigation)
 ========================================================================== */
 .left-panel {
-    flex: 0 0 410px;
+    flex: 0 0 390px;
+    width: 390px;
+    min-width: 390px;
+    max-width: 100%;
     margin-top: 115px;
     display: flex;
     flex-direction: column;
@@ -65,6 +72,7 @@ body, html {
     /*border: 0px solid rgba(255, 255, 255, 0.1); */
     /* Ensures the black background only wraps this specific div's content */
     width: 100%;
+    min-width: 0;
     box-sizing: border-box;
 }
 
@@ -93,6 +101,7 @@ body, html {
     overflow: hidden;
     border: 0px solid #FFFFFF;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -193,7 +202,10 @@ body, html {
     RIGHT PANEL (Dynamic Content)
 ========================================================================== */
 .right-panel {
-    flex: 0 0 750px;
+    flex: 1 1 390px;
+    width: auto;
+    min-width: 390px;
+    max-width: 700px;
     background-color: #333333;
     border: 1px solid #999999;
     border-radius: 8px;
@@ -208,7 +220,7 @@ body, html {
     */
     min-height: 315px;
     height: fit-content;
-    max-height: 90vh;
+    max-height: calc(100vh - 120px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 
     /* Animation State Controls */
@@ -267,6 +279,7 @@ body, html {
     font-size: 15px;
     line-height: 1.25;
     overflow-y: auto;
+    overflow-x: hidden;
 
     /* --- Firefox Scrollbar Support --- */
     scrollbar-width: thin;
@@ -417,6 +430,13 @@ body, html {
     font-size: 14px;
     color: #ffd9ab;
     font-weight: 600;
+}
+
+@media (max-width: 980px) {
+    .site-wrapper {
+        width: calc(100% - 20px);
+        min-width: 900px;
+    }
 }
 
 @media (max-width: 768px) {
