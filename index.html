@@ -48,7 +48,11 @@
     <template id="tpl-contact">
         <div class="contact-content">
             <p>Fill out the form below to send me a message.</p>
-            <form id="contactForm" action="#" method="POST">
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                <input type="hidden" name="access_key" value="e79c3a93-84bb-4012-911b-169847c3dea0">
+                <input type="checkbox" name="botcheck" id="" style="display: none;">
+
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -62,6 +66,8 @@
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
+
+                <div id="formResponse" class="form-response"></div>
             </form>
         </div>
     </template>
