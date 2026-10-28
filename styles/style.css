@@ -148,6 +148,7 @@ body, html {
     font-size: 16px;
     font-weight: 700;
     line-height: 1.1;
+    min-height: 22px;
     font-family: Tahoma, Verdana, Arial, sans-serif;
     transition: background-color 0.2s ease;
 }
@@ -163,11 +164,13 @@ body, html {
 .presentation-links .ext-link {
     display: inline-block;
     margin-left: 4px;
-    padding: 2px 8px;
+    padding: 1px 8px;
     border-radius: 999px;
     background-color: rgba(255,255,255,0.10);
     color: #dfeaf7;
     text-decoration: none;
+    line-height: 1.4;
+    vertical-align: middle;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
