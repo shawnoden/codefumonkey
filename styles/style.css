@@ -114,14 +114,19 @@ body, html {
     padding: 4px 8px;
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
-    transition: background-color 0.2s, padding-left 0.2s;
+    transition: background-color 0.2s ease;
 }
 
 .navigation a:hover {
     background-color: #777777;
-    padding-left: 8px;
+}
+
+.presentation-links .ext-link:hover {
+    background-color: rgba(255,255,255,0.18);
+    color: #ffffff;
+    transform: translateY(-1px);
 }
 
 .ext-link {
@@ -140,23 +145,45 @@ body, html {
 .navigation li {
     padding: 2px 8px;
     color: #FFFFFF;
-    font-size: 15px;
-    line-height: 1.2;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
     font-family: Tahoma, Verdana, Arial, sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.navigation li:hover {
+    background-color: #777777;
 }
 
 .presentation-links {
     white-space: nowrap;
 }
 
+.presentation-links .ext-link {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background-color: rgba(255,255,255,0.10);
+    color: #dfeaf7;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.presentation-links .ext-link:hover {
+    background-color: rgba(255,255,255,0.18);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
 .navigation li a {
     font-family: Tahoma, Verdana, Arial, sans-serif;
-    font-size: 15px;
     padding: 0 2px;
 }
 
 .navigation li a:hover {
-    padding-left: 2px;
+    background-color: transparent;
 }
 
 /* ==========================================================================
