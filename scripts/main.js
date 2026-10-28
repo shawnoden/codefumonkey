@@ -96,26 +96,31 @@ document.addEventListener('DOMContentLoaded', () => {
                             form?.addEventListener('submit', async (formEvent) => {
                                 formEvent.preventDefault();
 
+                                const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+                                if (!hCaptcha) {
+                                    e.preventDefault();
+                                    alert("Please fill out captcha field")
+                                    return
+                                }
+
                                 const formData = new FormData(form);
 
                                 try {
-                                const response = await fetch(form.action, {
-                                    method: 'POST',
-                                    body: formData,
-                                    headers: {
-                                    'Accept': 'application/json'
+                                    const response = await fetch(form.action, {
+                                        method: 'POST',
+                                        body: formData
+                                    });
+
+                                    if (!response.ok) {
+                                        throw new Error('Submission failed');
                                     }
-                                });
 
-                                if (!response.ok) {
-                                    throw new Error('Submission failed');
-                                }
-
-                                form.reset();
-                                responseBox.textContent = 'Message sent successfully!';
+                                    form.reset();
+                                    responseBox.textContent = 'Message sent successfully!';
                                 } catch (error) {
-                                responseBox.textContent = 'Something went wrong. Please try again.';
-                                console.error(error);
+                                    responseBox.textContent = 'Something went wrong. Please try again.';
+                                    console.error(error);
                                 }
                             });
                             }
