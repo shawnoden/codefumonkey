@@ -51,7 +51,6 @@
             <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="subject" value="New Submission from Web3Forms">
                 <input type="hidden" name="access_key" value="e79c3a93-84bb-4012-911b-169847c3dea0">
-                <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                 <div class="form-group">
                     <label for="name">Name:</label>
@@ -65,6 +64,9 @@
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
+
+                <div class="h-captcha" data-captcha="true"></div>
+
                 <button type="submit" class="submit-btn">Send Message</button>
 
                 <div id="formResponse" class="form-response"></div>
@@ -73,5 +75,7 @@
     </template>
 
     <script src="scripts/main.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+
 </body>
 </html>

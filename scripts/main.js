@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for(let line of lines) {
             let trimmedLine = line.trim();
-            
+
             if (trimmedLine.startsWith('### ')) {
                 trimmedLine = `<h3>${trimmedLine.substring(4)}</h3>`;
             } else if (trimmedLine.startsWith('## ')) {
@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (trimmedLine.startsWith('# ')) {
                 trimmedLine = `<h1>${trimmedLine.substring(2)}</h1>`;
             }
-            
+
             if (trimmedLine.startsWith('- ')) {
                 if (!inList) { html += '<ul>\n'; inList = true; }
                 trimmedLine = `<li>${trimmedLine.substring(2)}</li>`;
             } else {
                 if (inList) { html += '</ul>\n'; inList = false; }
-                
+
                 if (trimmedLine.length > 0 && !trimmedLine.startsWith('<h') && !trimmedLine.startsWith('<li')) {
                     if (line.endsWith('  ')) {
                         trimmedLine = `<p>${trimmedLine}<br></p>`;
@@ -68,15 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', async (e) => {
             e.preventDefault();
             e.stopPropagation(); // Avoid triggering close logic immediately
-            
+
             openPanel();
-            
+
             contentTitle.textContent = link.textContent;
             contentBody.innerHTML = '<p>Loading...</p>';
-            
+
             const targetId = link.getAttribute('data-target');
             const dataType = link.getAttribute('data-type');
-            
+
             try {
                 if (dataType === 'markdown') {
                     const response = await fetch(`content/${targetId}?_=${Date.now()}`);
@@ -88,15 +88,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (template) {
                         contentBody.innerHTML = '';
                         contentBody.appendChild(template.content.cloneNode(true));
-                        
-                        if(targetId === 'contact') {
+
+                        if (targetId === 'contact') {
                             const form = document.getElementById('contactForm');
-                            form?.addEventListener('submit', (formEvent) => {
+                            const responseBox = document.getElementById('formResponse');
+
+                            form?.addEventListener('submit', async (formEvent) => {
                                 formEvent.preventDefault();
-                                alert("Since there's no backend configured, this form is currently display-only!");
+
+                                const formData = new FormData(form);
+
+                                try {
+                                const response = await fetch(form.action, {
+                                    method: 'POST',
+                                    body: formData,
+                                    headers: {
+                                    'Accept': 'application/json'
+                                    }
+                                });
+
+                                if (!response.ok) {
+                                    throw new Error('Submission failed');
+                                }
+
                                 form.reset();
+                                responseBox.textContent = 'Message sent successfully!';
+                                } catch (error) {
+                                responseBox.textContent = 'Something went wrong. Please try again.';
+                                console.error(error);
+                                }
                             });
-                        }
+                            }
                     } else {
                         throw new Error('Template not found');
                     }
