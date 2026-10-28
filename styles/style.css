@@ -23,7 +23,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/cfm_background.png'); 
+    background-image: url('../images/cfm_background.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto; /* Reverted to auto so it does NOT stretch/resize */
@@ -37,7 +37,7 @@ body, html {
 .site-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; 
+    align-items: flex-start;
     /*max-width: 1200px;*/
 
     margin: 50px auto;
@@ -46,8 +46,8 @@ body, html {
 }
 
 /* ==========================================================================
-   LEFT PANEL (About Section & Navigation)
-   ========================================================================== */
+    LEFT PANEL (About Section & Navigation)
+========================================================================== */
 .left-panel {
     flex: 0 0 410px;
     margin-top: 115px;
@@ -59,12 +59,12 @@ body, html {
 /* Header Section (Title & Subtitle) */
 .header-section {
     background-color: #000000;
-    padding: 10px 10px; 
+    padding: 10px 10px;
     padding-bottom: 1px;
     border-radius: 8px;
     /*border: 0px solid rgba(255, 255, 255, 0.1); */
     /* Ensures the black background only wraps this specific div's content */
-    width: 100%; 
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -90,7 +90,7 @@ body, html {
 .navigation {
     background-color: #999999;
     border-radius: 8px;
-    overflow: hidden; 
+    overflow: hidden;
     border: 0px solid #FFFFFF;
     width: 100%;
     box-sizing: border-box;
@@ -106,7 +106,7 @@ body, html {
 }
 
 .navigation li {
-    border-bottom: none; 
+    border-bottom: none;
 }
 
 .navigation a {
@@ -121,49 +121,45 @@ body, html {
 
 .navigation a:hover {
     background-color: #777777;
-    padding-left: 8px; 
+    padding-left: 8px;
 }
 
 /* ==========================================================================
-   RIGHT PANEL (Dynamic Content)
-   ========================================================================== */
+    RIGHT PANEL (Dynamic Content)
+========================================================================== */
 .right-panel {
-    flex: 0 0 750px; 
+    flex: 0 0 750px;
     background-color: #333333;
     border: 1px solid #999999;
     border-radius: 8px;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    
     /* --- Vertical Position Restored --- */
     margin-top: 0; /* 👈 Restored back to the very top of the wrapper */
-    
-    /* 
-       Guarantees the bottom of this panel reaches or exceeds the bottom of the left panel:
-       Left Panel margin-top (50px) + Left Panel height (~265px) = 315px minimum height.
+    /*
+        Guarantees the bottom of this panel reaches or exceeds the bottom of the left panel:
+        Left Panel margin-top (50px) + Left Panel height (~265px) = 315px minimum height.
     */
-    min-height: 315px; 
-    
-    height: fit-content; 
-    max-height: 90vh; 
+    min-height: 315px;
+    height: fit-content;
+    max-height: 90vh;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 
     /* Animation State Controls */
-    opacity: 0; 
-    visibility: hidden; 
-    transform: translateX(50px); 
-    
-    transition: 
-        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-        opacity 0.4s ease-out, 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+    transition:
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.4s ease-out,
         visibility 0.4s;
 }
 
 .right-panel.active {
     opacity: 1;
     visibility: visible;
-    transform: translateX(0); 
+    transform: translateX(0);
 }
 
 .right-panel:not(.active) * {
@@ -205,8 +201,8 @@ body, html {
     padding: 15px 25px;
     font-size: 15px;
     line-height: 1.25;
-    overflow-y: auto; 
-    
+    overflow-y: auto;
+
     /* --- Firefox Scrollbar Support --- */
     scrollbar-width: thin;
     scrollbar-color: #999999 #2e2e2e;
@@ -233,8 +229,8 @@ body, html {
 }
 
 /* Typography & Inner Markdown Rendering Styles */
-.content-body h1, 
-.content-body h2, 
+.content-body h1,
+.content-body h2,
 .content-body h3 {
     margin-top: 15px; /* Reduced from 20px */
     margin-bottom: 5px; /* Reduced from 8px */
