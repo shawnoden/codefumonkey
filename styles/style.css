@@ -110,7 +110,7 @@ body, html {
 }
 
 .navigation a {
-    display: block;
+    display: inline-block;
     padding: 4px 8px;
     color: #FFFFFF;
     text-decoration: none;
@@ -122,6 +122,41 @@ body, html {
 .navigation a:hover {
     background-color: #777777;
     padding-left: 8px;
+}
+
+.ext-link {
+    color: #dfeaf7;
+    text-decoration: underline;
+    text-decoration-color: rgba(223, 234, 247, 0.7);
+    text-underline-offset: 2px;
+    opacity: 0.95;
+}
+
+.ext-link:hover {
+    color: #ffffff;
+    text-decoration-color: rgba(255, 255, 255, 0.9);
+}
+
+.navigation li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 2px 8px;
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 1.2;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+.navigation li a {
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-size: 15px;
+    padding: 0 2px;
+}
+
+.navigation li a:hover {
+    padding-left: 2px;
 }
 
 /* ==========================================================================
